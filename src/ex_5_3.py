@@ -40,8 +40,8 @@ if __name__ == "__main__":
     # (see README.md for more details)
     import os
     parser = ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
-    parser.add_argument('infile')
-    parser.add_argument('outfile')
+    parser.add_argument('infile',help='provide  file path')
+    parser.add_argument('outfile',help='provide file path')
     args = parser.parse_args()
     data = np.loadtxt(args.infile)
     normalize = (data - data.mean(axis=0)) / data.std(axis=0)
