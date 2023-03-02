@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
     import os
-    parser = ArgumentParser(description='This programme writes the data from the input file to the output file after applying a standard scale transform..')
+    parser = ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
     parser.add_argument('infile')
     parser.add_argument('outfile')
     args = parser.parse_args()
