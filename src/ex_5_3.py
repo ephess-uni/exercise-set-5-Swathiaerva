@@ -45,7 +45,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     data = np.loadtxt(args.infile)
     normalize = (data - data.mean(axis=0)) / data.std(axis=0)
-    processed = normalized
+    processed = normalize
     root_directory = get_repository_root()
     os.makedirs(root_directory / "outputs", exist_ok=True)
     np.savetxt(args.outfile, processed, fmt='%.2e')
