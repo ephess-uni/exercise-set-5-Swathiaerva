@@ -15,7 +15,7 @@ except ImportError:
 
 
 if __name__ == "__main__":
-
+    import os
     # Use these predefined input / output files
     root_dir = get_repository_root()
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
@@ -24,3 +24,8 @@ if __name__ == "__main__":
     # Complete the data processing steps using numpy here.
 
     # Save the output to OUTFILE using numpy routines.
+    data = np.loadtxt(INFILE)
+    normalize = (data - data.mean(axis=0)) / data.std(axis=0)
+    processed = normalize
+    os.makedirs(root_dir / "outputs", exist_ok=True)
+    np.savetxt(OUTFILE, processed, fmt='%.2e')
